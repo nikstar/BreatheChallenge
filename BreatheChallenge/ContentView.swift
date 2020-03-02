@@ -6,10 +6,10 @@ struct Flower: View {
   @State var open: Double = 1
   
   let r: CGFloat = 120
-  var numberOfPellets: Int = 6
+  var numberOfPetals: Int = 6
   
   var pelletRotation: Double {
-    360 / Double(numberOfPellets)
+    360 / Double(numberOfPetals)
   }
   var pelletSize: CGFloat {
     r * CGFloat(minSize * (1 - open) + open)
@@ -23,7 +23,7 @@ struct Flower: View {
   
   var body: some View {
     let content = ZStack {
-      ForEach(0..<numberOfPellets) { idx in
+      ForEach(0..<numberOfPetals) { idx in
         Circle()
           .foregroundColor(.white)
           .frame(width: self.pelletSize, height: self.pelletSize)
